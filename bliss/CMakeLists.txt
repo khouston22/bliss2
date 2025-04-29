@@ -26,9 +26,9 @@ install(
 #
 # bliss_find_hits
 #
-add_executable(bliss_find_hits bliss_find_hits.cpp)
+add_executable(bliss_find_hits2 bliss_find_hits.cpp)
 target_link_libraries(
-  bliss_find_hits
+  bliss_find_hits2
   PUBLIC bliss_core
          bliss_preprocess
          drift_search
@@ -39,10 +39,10 @@ target_link_libraries(
          stdc++fs
 )
 
-install(TARGETS bliss_find_hits RUNTIME COMPONENT bliss_executables DESTINATION bin)
+install(TARGETS bliss_find_hits2 RUNTIME COMPONENT bliss_executables DESTINATION bin)
 # Installs executables to ship through python wheels
 install(
-  TARGETS bliss_find_hits
+  TARGETS bliss_find_hits2
   EXCLUDE_FROM_ALL
   RUNTIME DESTINATION ${PY_BUILD_CMAKE_PACKAGE_NAME}-${PY_BUILD_CMAKE_PACKAGE_VERSION}.data/scripts
           COMPONENT python_binaries
